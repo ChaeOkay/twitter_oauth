@@ -1,0 +1,20 @@
+<div class="container">
+  <h1>Tweet Now! 2: Multi-User</h1>
+  <% if @user %>
+    <div class='container'>
+      <h3>Tweeting as: <%= @user.username %></h3>
+      <form id="make_tweet" method='post' action='/<%= @user.username %>/tweet' >
+        <input type='text' name='tweet' placeholder='Tweet Message'>
+        <br />
+        <input type='submit' value='Tweet!'>
+      </form>
+
+    <div class='posted_tweet'>
+    </div>
+
+    </div>
+  <% else %>
+    <button><a href="/sign_in">Sign In with Twitter</a></button>
+  <% end %>
+
+</div>
